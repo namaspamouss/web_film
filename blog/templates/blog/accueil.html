@@ -1,0 +1,16 @@
+{% include 'base.html' with app="blog" %}
+{% block content %}
+
+<h1>bienvenue sur mon blog !!</h1>
+{% for article in derniers_articles %}
+    <div class = "article">
+        <h3>{{ article.titre }}</h3>
+        <p class="text content">{{ article.contenu|truncatewords_html:80 }}</p>
+        <p><a href="{% url 'lire' id=article.id slug=article.slug %}">lire la suite</a></p>
+    </div>
+{% empty %}
+<p>aucun article</p>
+{% endfor %}
+{% endblock content %}
+
+

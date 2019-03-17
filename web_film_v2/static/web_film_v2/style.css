@@ -1,0 +1,74 @@
+label {
+    color: white;
+}
+h1, h2, h3{
+    font-weight: bold;
+    color: #ce0404;
+    padding-left: 10px;
+}
+
+body {
+    background-color: #202020;
+    padding-top: 60px;
+}
+div.gallery {
+    margin: 5px;
+    float: left;
+    width: 180px;
+}
+
+div.gallery img {
+    width: 100%;
+    height: auto;
+}
+
+div.desc {
+    font-weight: bold;
+    color: #ce0404;
+    font-size: auto;
+    padding: 5px;
+    text-align: center;
+}
+
+a, th, td {
+    text-decoration: none;
+    color: #ce0404;
+}
+
+span {
+    display: block;
+}
+
+.cache {
+    transition: 0.5s;
+    display: none;
+    position: absolute;
+    background: #343a40;
+}
+
+.deroulant:hover .cache {
+    display: block;
+}
+
+.text {
+    color: white;
+    padding-left: 30px;
+    padding-right: 30px;
+    text-indent: 0px;
+}
+.content::first-letter {
+    float: left;
+    font-size: 3em;
+    line-height: 1em;
+    margin-right: 3px;
+}
+
+.navbar {
+    position: fixed;
+    top: 0px;
+    width: 100%;
+}
+
+form {
+    color: white;
+}

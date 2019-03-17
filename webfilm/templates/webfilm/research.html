@@ -1,0 +1,52 @@
+{% include 'base.html' with app="webfilm" %}
+{% block content %}
+<h2>vous avez recherché: "{{research}}"<h2>
+<span>
+{% if film  %}
+<h2>films:</h2>
+{% for film in film %}
+    <div class='gallery' style='width: 220px; height: 400px;'>
+    <div class='desc'>{{ film.titre }}</div>
+    <a href="/webfilm/movie/{{film.id}}"><img width='auto' height='300' src='{{film.affiche}}' alt=''></a>
+    </div>
+{% endfor %}
+{% endif %}
+</span>
+
+<span>
+{% if acteur %}
+<h2>acteur:</h2>
+{% for acteur in acteur %}
+    <a href="/webfilm/actor/{{acteur.id}}"><div class='desc'>{{ acteur.prenom }} {{ acteur.nom }}</div></a>
+{% endfor %}
+{% endif %}
+</span>
+
+<span>
+{% if role %}
+<h2>role:</h2>
+{% for role in role %}
+    <a href="/webfilm/role/{{role.id}}"><div class='desc'>{{ role.role }}</div></a>
+{% endfor %}
+{% endif %}
+</span>
+
+{% if not film and not acteur and not role %}
+<h2>dsl, aucune donnée ne correspond à votre recherche dans la DB</h2>
+{% endif %}
+
+A voir aussi sur The Movie DB:
+
+<span>
+{% if movies  %}
+<h2>A voir aussi sur The Movie DB:</h2>
+{% for movie in movies %}
+    <div class='gallery' style='width: 220px; height: 400px;'>
+    <div class='desc'>{{ movie.title }}</div>
+    <img width='auto' height='300' src='https://image.tmdb.org/t/p/w500{{movie.poster_path}}' alt=''>
+    </div>
+{% endfor %}
+{% endif %}
+</span>
+{{myrequest}}
+{% endblock %}

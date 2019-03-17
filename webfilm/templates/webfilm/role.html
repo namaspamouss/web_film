@@ -1,0 +1,6 @@
+{% include 'base.html' with app="webfilm" %}
+{% block content %}
+
+<div class='desc'>le rôle de {{ role.role }} est joué par:  <a href="/webfilm/actor/{{role.acteur.id}}">{{ role.acteur.prenom }} {{ role.acteur.nom }}</a></div>
+
+{% endblock %}

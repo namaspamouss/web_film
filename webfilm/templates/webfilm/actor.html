@@ -1,0 +1,17 @@
+{% include 'base.html' with app="webfilm" %}
+{% block content %}
+
+<div class='desc'>{{ actor.prenom }} {{ actor.nom }}</div>
+<table class="table">
+        <tr>
+            <th scope="col" color="red">role</th>
+            <th scope="col" color="red">Film</th> 
+        </tr>
+        {% for role in role %}
+        <tr>
+            <td class='desc' color="red"><a href="/webfilm/role/{{role.id}}">{{ role.role }}</a></td>
+            <td class='desc' color="red"><a href="/webfilm/movie/{{role.film.id}}">{{ role.film.titre }}</a></td> 
+        </tr>
+    {% endfor %}
+    </table>
+{% endblock %}

@@ -1,0 +1,13 @@
+{% include 'base.html' with app="blog" %}
+{% block content %}
+{% if sauvegarde %}
+<p>Ce contact a bien été enregistré</p>
+{% endif %}
+<p>
+    <form method="post" enctype="multipart/form-data" action=".">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit"/>
+</p>
+
+{% endblock %}

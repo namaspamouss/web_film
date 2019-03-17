@@ -1,0 +1,16 @@
+{% include 'base.html' with app="webfilm" %}
+{% block content %}
+
+{% for film in liste_de_films %}
+
+    <div class='gallery' style='width: 220px; height: 400px;'>
+    <div class='desc'>{{ film.titre }}</div>
+    <a href="/webfilm/movie/{{film.id}}"><img width='auto' height='300' src='{{film.affiche}}' alt=''></a>
+    </div>
+
+{% empty %}
+
+    <p>aucun film à afficher</p>
+
+{% endfor %}
+{% endblock %}

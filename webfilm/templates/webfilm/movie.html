@@ -1,0 +1,23 @@
+{% include 'base.html' with app="webfilm" %}
+{% block content %}
+
+<div class='gallery' style='width: 440px; height: 800px;'>
+    <div class='desc'>{{ movie.titre }}</div>
+    <img width='auto' height='300' src='{{movie.affiche}}' alt=''>
+    <table class="table">
+        <tr>
+            <th scope="col" color="red">role</th>
+            <th scope="col" color="red">Acteur</th> 
+        </tr>
+        {% for role in role %}
+        <tr>
+            <td class='desc' color="red"><a href="/webfilm/role/{{role.id}}">{{ role.role }}</a></td>
+            <td class='desc' color="red"><a href="/webfilm/actor/{{role.acteur.id}}">{{ role.acteur.prenom }} {{ role.acteur.nom }}</a></td> 
+        </tr>
+    {% endfor %}
+    </table>
+</div>
+
+
+
+{% endblock %}
