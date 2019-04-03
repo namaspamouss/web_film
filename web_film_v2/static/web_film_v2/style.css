@@ -72,3 +72,7 @@ span {
 form {
     color: white;
 }
+
+.affiche {
+    bottom: 0px;
+}

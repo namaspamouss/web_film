@@ -4,12 +4,16 @@
 <span>
 {% if film  %}
 <h2>films:</h2>
-{% for film in film %}
-    <div class='gallery' style='width: 220px; height: 400px;'>
-    <div class='desc'>{{ film.titre }}</div>
-    <a href="/webfilm/movie/{{film.id}}"><img width='auto' height='300' src='{{film.affiche}}' alt=''></a>
+<div class="container">
+    <div class="row">
+        {% for film in film %}
+            <div class='col-sm'>
+            <div class='desc'>{{ film.titre }}</div>
+            <a href="/webfilm/movie/{{film.id}}"><img width='auto' height='400px' src='{{film.affiche}}' alt=''></a>
+            </div>
+        {% endfor %}
     </div>
-{% endfor %}
+</div>
 {% endif %}
 </span>
 
@@ -35,18 +39,19 @@
 <h2>dsl, aucune donnée ne correspond à votre recherche dans la DB</h2>
 {% endif %}
 
-A voir aussi sur The Movie DB:
 
-<span>
 {% if movies  %}
-<h2>A voir aussi sur The Movie DB:</h2>
-{% for movie in movies %}
-    <div class='gallery' style='width: 220px; height: 400px;'>
-    <div class='desc'>{{ movie.title }}</div>
-    <img width='auto' height='300' src='https://image.tmdb.org/t/p/w500{{movie.poster_path}}' alt=''>
+<div><h2>A voir aussi sur The Movie DB:</h2></div>
+<div class="container">
+    <div class="row">
+        {% for movie in movies %}
+            <div class='col-sm'>
+            <div class='desc'>{{ movie.title }}</div>
+            <div><img class="affiche" width='auto' height='300' src='https://image.tmdb.org/t/p/w500{{movie.poster_path}}' alt=''></div>
+            </div>
+        {% endfor %}
     </div>
-{% endfor %}
+</div>
 {% endif %}
-</span>
 {{myrequest}}
 {% endblock %}
